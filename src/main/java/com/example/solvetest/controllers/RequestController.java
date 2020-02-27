@@ -18,25 +18,25 @@ import com.example.solvetest.shared.UserCase;
 @RequestMapping("/solvetest")
 public class RequestController {
 
-	@Autowired
-	private Environment env;
-	
-	@Autowired
-	ProcessCaseService processCaseService;
-	
-	@GetMapping("/status/check")
-	public String status() {
-		return "working in the port "+ env.getProperty("local.server.port");
-	}
-	
-	@PostMapping("/process/case")
-	public String  processCase (@RequestBody UserRequestModel userRequesModel) {
-		
-		ModelMapper modelMapper = new ModelMapper();
-		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-		
-		UserCase userCase = modelMapper.map(userRequesModel, UserCase.class);
-		UserCase userResponse = processCaseService.processCase(userCase);
-		return null;
-	}
+    @Autowired
+    private Environment env;
+
+    @Autowired
+    ProcessCaseService processCaseService;
+
+    @GetMapping("/status/check")
+    public String status() {
+        return "working in the port " + env.getProperty("local.server.port");
+    }
+
+    @PostMapping("/process/case")
+    public String processCase(@RequestBody UserRequestModel userRequesModel) {
+
+        ModelMapper modelMapper = new ModelMapper();
+        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+
+        UserCase userCase = modelMapper.map(userRequesModel, UserCase.class);
+        UserCase userResponse = processCaseService.processCase(userCase);
+        return null;
+    }
 }

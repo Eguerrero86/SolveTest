@@ -7,10 +7,10 @@ import com.example.solvetest.shared.TraceabilityRecord;
 @Service
 public class HandleTraceabilityServiceImpl implements HandleTraceabilityService {
 
-	@Override
-	public TraceabilityRecord createTraceabilityRecord(TraceabilityRecord traceabilityRecord) {
-		System.out.println("se guarda el historial correctamente");
-		return null;
-	}
+    @Override
+    public TraceabilityRecord createTraceabilityRecord(TraceabilityRecord traceabilityRecord) {
+        System.out.println("se guarda el historial correctamente");
+        return null;
+    }
 
 }
