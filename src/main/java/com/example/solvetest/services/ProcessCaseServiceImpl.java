@@ -5,7 +5,6 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.solvetest.shared.TraceabilityRecord;
 import com.example.solvetest.shared.UserCase;
 
 @Service
@@ -19,16 +18,13 @@ public class ProcessCaseServiceImpl implements ProcessCaseService {
 
     @Override
     public UserCase processCase(UserCase userCase) {
-        System.out.println("ProcessCase inicializado");
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-        TraceabilityRecord traceabilityRecord = modelMapper.map(userCase, TraceabilityRecord.class);
-        handleTraceabilityService.createTraceabilityRecord(traceabilityRecord);
+        handleTraceabilityService.createTraceabilityRecord(userCase);
+        UserCase responseCase = getBestScenarioService.getBestScenario(userCase);
 
-        getBestScenarioService.getBestScenario(userCase.getInputCase());
-
-        return null;
+        return responseCase;
     }
 
 }

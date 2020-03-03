@@ -1,7 +1,7 @@
 package com.example.solvetest.services;
 
-import java.util.ArrayList;
+import com.example.solvetest.shared.UserCase;
 
 public interface GetBestScenarioService {
-    ArrayList<String> getBestScenario(ArrayList<String> inputCase);
+	UserCase getBestScenario(UserCase userCase);
 }

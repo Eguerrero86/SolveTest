@@ -1,7 +1,7 @@
 package com.example.solvetest.services;
 
-import com.example.solvetest.shared.TraceabilityRecord;
+import com.example.solvetest.shared.UserCase;
 
 public interface HandleTraceabilityService {
-    TraceabilityRecord createTraceabilityRecord(TraceabilityRecord traceabilityRecord);
+	UserCase createTraceabilityRecord(UserCase userCase);
 }

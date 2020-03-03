@@ -6,21 +6,28 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.example.solvetest.shared.UserCase;
+
 @Service
 public class GetBestScenarioServiceImpl implements GetBestScenarioService {
 
-    private ArrayList<String> inventory;
+    private List<String> inventory;
     private List<Integer> dayInvetory;
 
     @Override
-    public ArrayList<String> getBestScenario(ArrayList<String> inputCase) {
-        this.inventory = inputCase;
+    public UserCase getBestScenario(UserCase userCase) {
+        this.inventory = userCase.getInputCase();
+        List<String> bestCases = new ArrayList<>();
         int workdays = getWorkdays();
+        
         for (int i = 0; i < workdays; i++) {
             this.dayInvetory = getInventory();
-            System.out.println(maximizeNumberOfTrips());
+            int numTrips = maximizeNumberOfTrips();
+            bestCases.add("Case #" + i + ": "+ numTrips);
         }
-        return null;
+        
+        userCase.setOutputCase(bestCases);
+        return userCase;
     }
 
     public int getWorkdays() {

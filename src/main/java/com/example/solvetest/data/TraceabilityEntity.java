@@ -1,6 +1,6 @@
-/*package com.example.solvetest.data;
+package com.example.solvetest.data;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +20,7 @@ public class TraceabilityEntity {
 	private String cedula;
 	
 	@Column(nullable = false, length = 30)
-	private LocalDate date;
+	private LocalDateTime executionDate;
 
 	public String getCedula() {
 		return cedula;
@@ -30,13 +30,13 @@ public class TraceabilityEntity {
 		this.cedula = cedula;
 	}
 
-	public LocalDate getDate() {
-		return date;
+	public LocalDateTime getExecutionDate() {
+		return executionDate;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setExecutionDate(LocalDateTime executionDate) {
+		this.executionDate = executionDate;
 	}
 	
 	
-}*/
+}
