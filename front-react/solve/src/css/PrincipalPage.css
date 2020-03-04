@@ -1,0 +1,55 @@
+.expand-container{
+    width: 100%;
+    height: 100%;
+}
+.general-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.input-container{
+    width: 30%;
+    height: 30%;
+}
+.output-container{
+    background: #a3f1e0;
+    width: 40%;
+    height: 50%;
+}
+.input-cont{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+.import-cont{
+    width: 96%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+}
+.cedula-input{
+    width: 96%;
+    height: 30px;
+}
+.file-input{
+    width: 74%;
+    height: 30px;
+}
+.select-button{
+    width: 24%;
+    height: 35px;
+    outline:none;
+    margin-left: 2%;
+    color: azure;
+    border: none;
+    border-radius: 28px;
+    background: #eb94d0;
+    background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+}
+.select-button:hover {
+    background: #2079b0;
+    background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+    text-decoration: none;
+    cursor: pointer;
+  }
